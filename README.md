@@ -1,13 +1,9 @@
-# Sample Hardhat Project
+# Execute FlashSwap using Uniswap V3
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Perform a Flashloan in a pool , and use the funds to make swaps on other pools as Arbitrage to gain profit.
 
-Try running some of the following tasks:
+⚠️ Code is not Audited and yet to be tested extensively.
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+## Complete documentation with demonstration ,installation and execution instructions coming soon.
+
+
