@@ -33,12 +33,12 @@ contract PairFlash is IUniswapV3FlashCallback, PeripheryImmutableState, Peripher
     ) external override {
         FlashCallbackData memory decoded = abi.decode(data, (FlashCallbackData));
         IUniswapV3Pool pool= CallbackValidation.verifyCallback(factory, decoded.poolKey);
-
+  
         address token0 = decoded.poolKey.token0;
         address token1 = decoded.poolKey.token1;
 
         TransferHelper.safeApprove(token0, address(swapRouter), decoded.amount0);
-        TransferHelper.safeApprove(token1, address(swapRouter), decoded.amount1);
+        TransferHelper.safeApprove(token1, address   (swapRouter), decoded.amount1);
 
         uint256 amount1Min = LowGasSafeMath.add(decoded.amount1, fee1);
         uint256 amount0Min = LowGasSafeMath.add(decoded.amount0, fee0);

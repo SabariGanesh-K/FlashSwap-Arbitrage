@@ -12,7 +12,7 @@ POSITION_MANAGER_ADDRESS= '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707'
 TETHER_ADDRESS= '0x0165878A594ca255338adfa4d48449f69242Eb8F'
 USDC_ADDRESS= '0xa513E6E4b8f2a923D98304ec87F64353C4D5C853'
 
-const WETH9 = require("../WETH9.json")
+const WETH9 = require("../utils/WETH9.json")
 const artifacts = {
   UniswapV3Factory: require("@uniswap/v3-core/artifacts/contracts/UniswapV3Factory.sol/UniswapV3Factory.json"),
   SwapRouter: require("@uniswap/v3-periphery/artifacts/contracts/SwapRouter.sol/SwapRouter.json"),
@@ -75,4 +75,4 @@ main()
   .catch((error) => {
     console.error(error);
     process.exit(1);
-  });
+  }); 

@@ -1,5 +1,5 @@
 const { Contract, ContractFactory, utils, BigNumber } = require("ethers")
-const WETH9 = require("../WETH9.json")
+const WETH9 = require("../utils/WETH9.json")
 
 const artifacts = {
   UniswapV3Factory: require("@uniswap/v3-core/artifacts/contracts/UniswapV3Factory.sol/UniswapV3Factory.json"),
@@ -31,7 +31,7 @@ const linkLibraries = ({ bytecode, linkReferences }, libraries) => {
         }
       )
     })
-  })
+  }) 
   return bytecode
 }
 
@@ -58,7 +58,7 @@ async function main() {
           NFTDescriptor: [
             {
               length: 20,
-              start: 1261,
+              start: 1681,
             },
           ],
         },
@@ -70,7 +70,7 @@ async function main() {
   );
 
   NonfungibleTokenPositionDescriptor = new ContractFactory(artifacts.NonfungibleTokenPositionDescriptor.abi, linkedBytecode, owner);
-  nonfungibleTokenPositionDescriptor = await NonfungibleTokenPositionDescriptor.deploy(weth.address);
+  nonfungibleTokenPositionDescriptor = await NonfungibleTokenPositionDescriptor.deploy(weth.address,'0x4554480000000000000000000000000000000000000000000000000000000000');
 
   NonfungiblePositionManager = new ContractFactory(artifacts.NonfungiblePositionManager.abi, artifacts.NonfungiblePositionManager.bytecode, owner);
   nonfungiblePositionManager = await NonfungiblePositionManager.deploy(factory.address, weth.address, nonfungibleTokenPositionDescriptor.address);
